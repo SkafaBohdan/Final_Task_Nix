@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Task.DAL.Constants
 {
-    public class Constants
+    public class Rolename
     {
-        public const string UserRole = "user";
-        public const string AdminRole = "admin";
-
+        public const string USER = "user";
+        public const string ADMIN = "admin";
     }
 }

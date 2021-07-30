@@ -6,9 +6,9 @@ namespace Task.BLL.Services.Interfaces
 {
     public interface ICarServices
     {
-        void AddFirm(CarDTO car);
-        void UpdateFirm(CarDTO car);
+        void AddCar(CarDTO car);
+        void UpdateCar(CarDTO car);
         List<CarDTO> GetAllViews();
-        void DeleteFirmById(int id);
+        void DeleteCarById(int id);
     }
 }

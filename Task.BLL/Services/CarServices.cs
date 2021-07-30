@@ -10,12 +10,12 @@ namespace Task.BLL.Services
 {
     public class CarServices : ICarServices
     {
-        public void AddFirm(CarDTO car)
+        public void AddCar(CarDTO car)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteFirmById(int id)
+        public void DeleteCarById(int id)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +25,7 @@ namespace Task.BLL.Services
             throw new NotImplementedException();
         }
 
-        public void UpdateFirm(CarDTO car)
+        public void UpdateCar(CarDTO car)
         {
             throw new NotImplementedException();
         }

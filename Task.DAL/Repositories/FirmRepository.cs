@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task.DAL.EF;
 using Task.DAL.Entities;
 using Task.DAL.Repositories.Interfaces;
 
@@ -10,15 +12,30 @@ namespace Task.DAL.Repositories
 {
     public class FirmRepository : IFirmRepository
     {
-        private static List<FirmEntity> _list = new List<FirmEntity>();
+        private AvtoContext db;
+
+        public FirmRepository(AvtoContext context)
+        {
+            this.db = context;
+        }
+
         public void AddFirm(FirmEntity firm)
         {
-            throw new NotImplementedException();
+            if (firm != null)
+            {
+                db.Add(firm);
+                db.SaveChanges();
+            }
         }
 
         public void DeleteFirmById(int id)
         {
-            throw new NotImplementedException();
+            FirmEntity toDelete = db.Find(id);
+            if (toDelete != null)
+            {
+                db.Remove(toDelete);
+                db.SaveChanges();
+            }
         }
 
         public List<FirmEntity> GetAllViews()
@@ -28,7 +45,8 @@ namespace Task.DAL.Repositories
 
         public void UpdateFirm(FirmEntity firm)
         {
-            throw new NotImplementedException();
+            db.Entry(firm).State = EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }

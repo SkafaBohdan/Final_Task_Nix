@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task.DAL.Interfaces;
 
-namespace Task.DAL.Entities
+namespace Task.DAL.Abstract
 {
-    public class TypePay
+    public class BaseEntity : IBaseEntity
     {
-        [Required]
         public int Id { get; set; }
-        public string PayName { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

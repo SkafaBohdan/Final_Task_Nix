@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Task.BLL\Task.BLL.csproj" />
-    <ProjectReference Include="..\Task.DAL\Task.DAL.csproj" />
   </ItemGroup>
 
 </Project>
